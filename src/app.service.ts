@@ -44,8 +44,7 @@ export class AppService {
   deleteProgram(id: number) {
     const index = this.findIndex(id);
     if (index === -1) throw new ProgramNotFoundException();
-
-    return this.programs.splice(index);
+    return this.programs.splice(index, 1);
   }
   private findIndex(id: number) {
     return this.programs.findIndex((p) => p.Id === id);

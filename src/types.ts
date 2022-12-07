@@ -5,6 +5,6 @@ export type Program = {
   Gestor: string;
   Objetivo: string;
   Justificativa: string;
-  Envolvidos: string[];
+  Envolvidos: string;
   Procedimento: string;
 };
