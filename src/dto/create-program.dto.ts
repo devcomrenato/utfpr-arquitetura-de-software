@@ -22,8 +22,8 @@ export class CreateProgramDto {
   Justificativa: string;
 
   @IsDefined()
-  @IsArray()
-  Envolvidos: string[];
+  @IsString()
+  Envolvidos: string;
 
   @IsDefined()
   @IsString()

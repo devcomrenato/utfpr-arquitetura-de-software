@@ -22,8 +22,8 @@ export class UpdateProgramDto {
   Justificativa: string;
 
   @IsDefined()
-  @IsArray()
-  Envolvidos: string[];
+  @IsString()
+  Envolvidos: string;
 
   @IsDefined()
   @IsString()
