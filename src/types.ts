@@ -2,7 +2,7 @@ export type Program = {
   Id: number;
   NomePrograma: string;
   Data: string;
-  Gestor: number;
+  Gestor: string;
   Objetivo: string;
   Justificativa: string;
   Envolvidos: string[];

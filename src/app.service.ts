@@ -3,6 +3,7 @@ import { CreateProgramDto } from './dto/create-program.dto';
 import { UpdateProgramDto } from './dto/update-program.dto';
 import { ProgramNotFoundException } from './exceptions/program-not-found.exception';
 import { Program } from './types';
+import { resolveDate } from './utils';
 
 @Injectable()
 export class AppService {
@@ -20,6 +21,7 @@ export class AppService {
 
     this.programs.push({
       ...program,
+      Data: resolveDate(program.Data),
       Id,
     });
 
@@ -29,9 +31,12 @@ export class AppService {
     const index = this.findIndex(id);
     if (index === -1) throw new ProgramNotFoundException();
 
+    const program = this.programs[index];
+
     this.programs[index] = {
-      ...this.programs[index],
+      ...program,
       ...payload,
+      Data: resolveDate(payload.Data, program.Data),
     };
 
     return this.programs[index];
